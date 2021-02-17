@@ -1,0 +1,6 @@
+// Função MAIN
+fun main() {
+    var welcome = "Seja bem vinda"
+    var nome = "Arthur"
+    print("${welcome.replace("vinda","vindo")}, $nome")
+}
