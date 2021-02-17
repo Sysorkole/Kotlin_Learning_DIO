@@ -1,0 +1,6 @@
+// Função MAIN
+fun main() {
+    var numero = "Vinte Quatro"
+    numero = 23.toString()
+    println("Seu numero é: " + numero)    
+}
