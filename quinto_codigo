@@ -1,0 +1,19 @@
+// Função MAIN
+fun main() {
+    var valor:Int
+    valor = calcular(10,20,::operacao)
+    println("Resultado com operacao: $valor")
+    valor = calcular(10,20){n1,n2->
+        println("Operation: ($n1 * 100 / $n2)")
+        (n1*100)/n2
+    }
+    println("Resultado com operation: $valor")
+    
+}
+
+fun operacao(n1:Int, n2:Int) = (n1 * 10)/n2
+
+fun calcular(n1:Int, n2:Int, operation:(Int,Int)->Int):Int{
+    var resultado = operation(n1,n2)
+    return resultado
+}
