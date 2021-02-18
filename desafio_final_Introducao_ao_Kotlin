@@ -1,0 +1,99 @@
+// Função MAIN
+
+fun main(){
+    var valor1:Float?
+    var valor2:Float?
+    var resultado:Float?
+    var operation:Int?
+    println("Opções:\n\n1 - Soma\n2 - Subtração\n3 - Multiplicação\n4 - Divisão\n0 - Sair\n\nEscolha uma opção: ")
+    var input = readLine()
+    operation = input?.toInt()
+    println("Informe o valor 1(No formato 0.0):")
+    var input2 = readLine()
+    valor1 = converteFloat(input2)
+    println("Informe o valor 2(No formato 0.0):")
+    var input3 = readLine()
+    valor2 = converteFloat(input3)
+    while(operation!=0){
+        when{
+            operation == 1 ->{
+                resultado = soma(valor1, valor2)
+                if(resultado != null) println("A soma dos 2 valores é: $resultado")
+            }
+            operation == 2 ->{
+                resultado = subtracao(valor1, valor2)
+                if(resultado != null) println("A subtração dos 2 valores é: $resultado")
+                
+            }
+            operation == 3 ->{
+                resultado = multiplicacao(valor1, valor2)
+                if(resultado != null) println("A multiplicação dos 2 valores é: $resultado")
+            }
+            operation == 4 ->{
+                resultado = divisao(valor1, valor2)
+                if(resultado != null) println("A divisão dos 2 valores é: $resultado")
+            }
+            else -> {
+                println("Erro, opção invalida!")
+            }
+        }
+        println("Opções:\n\n1 - Soma\n2 - Subtração\n3 - Multiplicação\n4 - Divisão\n0 - Sair\n\nEscolha uma opção: ")
+        input = readLine()
+        operation = input?.toInt()
+        if(operation != 0){
+            println("Informe o valor 1(No formato 0.0):")
+            input2 = readLine()
+            valor1 = converteFloat(input2)
+            println("Informe o valor 2(No formato 0.0):")
+            input3 = readLine()
+            valor2 = converteFloat(input3)
+        }
+        
+    }
+    println("Até breve!\nDesligando sistema...")
+}
+fun converteFloat(n1:String?):Float?{
+    var resultado:String?
+    var resultadoFinal:Float?
+    if(n1 == "null"){
+        resultadoFinal = null
+    }
+    else{
+        resultado = n1 + "F"
+        resultadoFinal = resultado.toFloat()
+    }
+    return resultadoFinal
+
+}
+
+fun soma(n1:Float?, n2:Float?):Float?{
+    if(n1 == null || n2 == null){
+        println("Erro! Um dos Valores é nulo") 
+    }
+    else return n1 + n2
+    return null
+}
+
+fun subtracao(n1:Float?, n2:Float?):Float?{
+    if(n1 == null || n2 == null){
+        println("Erro! Um dos Valores é nulo") 
+    }
+    else return n1 - n2
+    return null
+}
+
+fun divisao(n1:Float?, n2:Float?):Float?{
+    if(n1 == null || n2 == null){
+        println("Erro! Um dos Valores é nulo") 
+    }
+    else return n1 / n2
+    return null
+}
+
+fun multiplicacao(n1:Float?, n2:Float?):Float?{
+    if(n1 == null || n2 == null){
+        println("Erro! Um dos Valores é nulo") 
+    }
+    else return n1 * n2
+    return null
+}
